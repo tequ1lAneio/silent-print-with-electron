@@ -1,0 +1,27 @@
+{
+  "name": "silent-print",
+  "version": "1.0.0",
+  "description": "a silent-print demo",
+  "main": "main.js",
+  "scripts": {
+    "test": "packup",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/tequ1lAneio/silent-print-with-electron.git"
+  },
+  "keywords": [
+    "7569316788"
+  ],
+  "author": "tequ1lAneio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tequ1lAneio/silent-print-with-electron/issues"
+  },
+  "homepage": "https://github.com/tequ1lAneio/silent-print-with-electron#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "^5.0.4"
+  }
+}

@@ -1,0 +1,8 @@
+node_modules/
+dist/view/
+dist/package/
+
+.npm
+package-lock.json
+yarn-error.log
+.idea
