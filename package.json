@@ -20,7 +20,11 @@
     "url": "https://github.com/tequ1lAneio/silent-print-with-electron/issues"
   },
   "homepage": "https://github.com/tequ1lAneio/silent-print-with-electron#readme",
-  "dependencies": {},
+  "dependencies": {
+    "electron-require": "^0.3.0",
+    "webpack": "^4.34.0",
+    "webpack-dev-server": "^3.7.2"
+  },
   "devDependencies": {
     "electron": "^5.0.4"
   }

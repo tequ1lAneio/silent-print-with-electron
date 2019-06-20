@@ -15,24 +15,25 @@
     <div id="app">
         
     </div>
+    <script src="rederer.js"></script>
     <script>
-        
-    const {ipcRenderer} = require('electron')
-    new Vue({
-        el: "#app",
-        data: {
-            arr: []
-        },
-        mounted() {
-            ipcRenderer.on('ping', (e, arr) => { //接收响应
-                console.log(e)
-                console.log(arr)
-                this.arr = arr;
-                ipcRenderer.sendToHost('pong') //向webview所在页面的进程传达消息
-            })
-        },
-        methods: {}
-    })
+    console.log(electron)
+    const ipcRenderer = electron.ipcRenderer
+    // new Vue({
+    //     el: "#app",
+    //     data: {
+    //         arr: []
+    //     },
+    //     mounted() {
+    //         ipcRenderer.on('ping', (e, arr) => { //接收响应
+    //             console.log(e)
+    //             console.log(arr)
+    //             this.arr = arr;
+    //             ipcRenderer.sendToHost('pong') //向webview所在页面的进程传达消息
+    //         })
+    //     },
+    //     methods: {}
+    // })
 
 
 
@@ -74,7 +75,7 @@
     }
 
     console.log(window)
-    const Notification = Notification || window.Notification
+    const Notification = window.Notification
 
     let myNotification = new Notification('标题', {
         body: '通知正文内容'
