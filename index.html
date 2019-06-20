@@ -10,11 +10,40 @@
     <h1>Hello World!</h1>
     <button id="">version</button>
     <button id="tool">openDevTool</button>
-    <button id=""></button>
+    <button id="print">打印</button>
+
+    <div id="app">
+        
+    </div>
     <script>
+        
+    const {ipcRenderer} = require('electron')
+    new Vue({
+        el: "#app",
+        data: {
+            arr: []
+        },
+        mounted() {
+            ipcRenderer.on('ping', (e, arr) => { //接收响应
+                console.log(e)
+                console.log(arr)
+                this.arr = arr;
+                ipcRenderer.sendToHost('pong') //向webview所在页面的进程传达消息
+            })
+        },
+        methods: {}
+    })
+
+
+
+
     const tool = document.querySelector('#tool')
     tool.onclick = function() {
         // window.webContents.openDevTools()
+    }
+
+    document.querySelector('#print').onclick = (e) => {
+        window.print()
     }
 
     function notifyMe() {
@@ -44,6 +73,7 @@
         // 出于尊重，我们不应该再打扰他们了
     }
 
+    console.log(window)
     const Notification = Notification || window.Notification
 
     let myNotification = new Notification('标题', {
