@@ -1,13 +1,20 @@
 const { app, BrowserWindow, ipcMain } = require('electron')
+const path = require('path')
 
 const createWindow = () => {
     let window = new BrowserWindow({
         width: 1920,
         height: 1080,
-        webPreference: true
+        webPreferences: {
+            javascript: true,
+            plugins: true,
+            webSecurity: false,
+            preload: path.join(__dirname, './client/dist/rederer.js') // 但预加载的 js 文件内仍可以使用 Nodejs 的 API
+        }
+
     })
-    // window.loadFile('http://173.100.1.70:8080')
-    window.loadFile('index.html')
+    window.loadURL('http://127.0.0.1:9000')
+    // window.loadFile('index.html')
     window.webContents.openDevTools()
     window.on('closed', () => {
         window = null

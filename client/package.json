@@ -1,0 +1,18 @@
+{
+  "name": "client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --hot --inline",
+    "build": "webpack --processs"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.35.0",
+    "webpack-dev-server": "^3.7.2"
+  }
+}
